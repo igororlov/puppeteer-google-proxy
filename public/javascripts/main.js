@@ -14,11 +14,12 @@ $('#translate').click(function (event) {
 
   var translateXhr = $.ajax({
     contentType: 'application/json',
-    //data: JSON.stringify({ text: text, lang: lang }),
-    //dataType: 'json',
+    data: JSON.stringify({ text: text, lang: lang }),
+    dataType: 'json',
     processData: false,
-    type: 'GET',
-    url: '/gTranslate?' + params,
+    type: 'POST',
+    url: '/gTranslate',
+    //url: '/gTranslate?' + params,
     success: function (data) {
       //$('#result').html(data.Response.text);
       $('#result').html(data.translation);

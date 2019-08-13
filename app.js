@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var bodyParser = require("body-parser");
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -26,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/node_modules/jquery/dist'));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use('/', indexRouter);
 app.use('/gSearch', googleSearchRouter);
