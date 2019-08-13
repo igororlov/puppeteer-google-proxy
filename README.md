@@ -10,3 +10,9 @@ Prerequisites: Node.js and npm.
 npm install
 node bin/www
 ```
+
+# Demo
+
+![Example GIF](public/images/Crawler.gif "Example")
+
+
