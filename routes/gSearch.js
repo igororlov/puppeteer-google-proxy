@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var puppeteer = require('puppeteer');
 var url = require('url');
-
+var querystring = require('querystring');
 
 
 /* GET users listing. */
@@ -16,6 +16,7 @@ router.get('/', function(req, res, next) {
 
   try {
     (async () => {
+      //const queryText = querystring.escape(query.query);
       const queryText = query.query;
       const queryPage = query.page > 1 ? `start=${(10*query.page-1)}` : '';
 
@@ -24,7 +25,7 @@ router.get('/', function(req, res, next) {
       await page.setViewport({ width: 1280, height: 800 })
       const uri = `https://www.google.com/search?q=${queryText}&${queryPage}`;
 
-      console.log('Search uri: ', uri);
+      //console.log('Search uri: ', uri);
       await page.goto(encodeURI(uri));
       await page.waitForSelector('h3.LC20lb');
       await page.waitForSelector('cite.iUh30');

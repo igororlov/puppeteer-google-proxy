@@ -8,6 +8,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
+    "convert-layout": "^0.8.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^2.6.2",
@@ -16,6 +17,7 @@
     "jquery": "^3.4.1",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
-    "puppeteer": "^1.19.0"
+    "puppeteer": "^1.19.0",
+    "querystring": "^0.2.0"
   }
 }
